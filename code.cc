@@ -234,11 +234,11 @@ UePacketTrace (Ptr<OutputStreamWrapper> stream, const Address &localAddrs, std::
    void print(d2d_user d2d[], cu_users cu[])
    {
      std::cout<<"\n";
-     for(int i=0; i<60 ; i++) std::cout<<"*";
+     // for(int i=0; i<60 ; i++) std::cout<<"*";
      std::cout<<"\n";
-     std::cout<< "                            SOCIAL_MEDIA"<<std::endl;
+     std::cout<< "Commercial"<<std::endl;
      std::cout<<"\n";
-     std::cout<< " Shard 1 = { "<<std::endl;
+     std::cout<< "Cluster 1:"<<std::endl;
       for(int i=0;i<5;i++)
       {
       if(d2d[i].application_type == 1)
@@ -260,13 +260,13 @@ UePacketTrace (Ptr<OutputStreamWrapper> stream, const Address &localAddrs, std::
       }
       }
       }
-      std::cout<< "           } "<<std::endl<<std::endl;
-      for(int i=0; i<60 ; i++) std::cout<<"*";
+      std::cout<< ""<<std::endl<<std::endl;
+      // for(int i=0; i<60 ; i++) std::cout<<"*";
       std::cout<<"\n";
       
-      std::cout<< "                       PUBLIC_SAFETY "<<std::endl;
+      std::cout<< "Public Safety Communication"<<std::endl;
       std::cout<<"\n";
-      std::cout<<" Shard 1 = { " <<std::endl; 
+      std::cout<<"Cluster 1:" <<std::endl; 
       for(int i=0;i<5;i++)
       {
       if(d2d[i].application_type == 2)
@@ -288,10 +288,10 @@ UePacketTrace (Ptr<OutputStreamWrapper> stream, const Address &localAddrs, std::
       }
       }
       }
-      std::cout<< "           } "<<std::endl<<std::endl;
+      std::cout<< ""<<std::endl<<std::endl;
       
       std::cout<<"\n";
-      std::cout<<" Shard 2 = { " <<std::endl; 
+      std::cout<<"Cluster 2:" <<std::endl; 
       for(int i=0;i<5;i++)
       {
       if(d2d[i].application_type == 2)
@@ -313,8 +313,8 @@ UePacketTrace (Ptr<OutputStreamWrapper> stream, const Address &localAddrs, std::
       }
       }
       }
-      std::cout<< "            } "<<std::endl<<std::endl;
-      for(int i=0; i<60 ; i++) std::cout<<"*";
+      std::cout<< ""<<std::endl<<std::endl;
+      // for(int i=0; i<60 ; i++) std::cout<<"*";
       std::cout<<"\n";
    }
   
@@ -353,9 +353,9 @@ void PhySnirTrace (std::string context ,uint16_t cellId, uint16_t rnti, double r
     {
        if(2*shard2[i] == ue && i == 0)
        { 
-          std::cout<<" UE"<<ue<<" belonging to D2D"<<i+1<<"\n";
-          std::cout<<" Time : " <<Simulator::Now().GetSeconds()<<"\n";
-          std::cout<<" RNTI : "<<rnti<<"                 rsrp : "<<rsrp<<"               SINR : "<<sinr<<std::endl;
+          std::cout<<"UE"<<ue<<" belonging to group "<<i+1<<"\n";
+          std::cout<<"RNTI : "<<rnti<<"\nRSRP : "<<rsrp<<"\nSINR : "<<sinr<<std::endl;
+          std::cout<<"Time : " <<Simulator::Now().GetSeconds()<<"\n";
           std::cout<<"\n";
        }
     }
@@ -389,9 +389,9 @@ void PhySnirTrace (std::string context ,uint16_t cellId, uint16_t rnti, double r
        if(2*shard2[i] == ue && (i == 0 || i == 1) )
        { 
           //std::cout<<context<<std::endl;
-          std::cout<<" UE"<<ue<<" belonging to D2D"<<i+1<<"\n";
-          std::cout<<" Time : " <<Simulator::Now().GetSeconds()<<"\n";
-          std::cout<<" RNTI : "<<rnti<<"                 rsrp : "<<rsrp<<"               SINR : "<<sinr<<std::endl;
+          std::cout<<"UE"<<ue<<" belonging to group "<<i+1<<"\n";
+          std::cout<<"RNTI : "<<rnti<<"\nRSRP : "<<rsrp<<"\nSINR : "<<sinr<<std::endl;
+          std::cout<<"Time : " <<Simulator::Now().GetSeconds()<<"\n";
           std::cout<<"\n";
        }
     }
@@ -423,9 +423,9 @@ void PhySnirTrace (std::string context ,uint16_t cellId, uint16_t rnti, double r
        if(2*shard2[i] == ue && (i == 0 || i == 1 || i == 2))
        { 
           //std::cout<<context<<std::endl;
-          std::cout<<" UE"<<ue<<" belonging to D2D"<<i+1<<"\n";
-          std::cout<<" Time : " <<Simulator::Now().GetSeconds()<<"\n";
-          std::cout<<" RNTI : "<<rnti<<"                 rsrp : "<<rsrp<<"               SINR : "<<sinr<<std::endl;
+          std::cout<<"UE"<<ue<<" belonging to group "<<i+1<<"\n";
+          std::cout<<"RNTI : "<<rnti<<"\nRSRP : "<<rsrp<<"\nSINR : "<<sinr<<std::endl;
+          std::cout<<"Time : " <<Simulator::Now().GetSeconds()<<"\n";
           std::cout<<"\n";
        }
     }
@@ -458,9 +458,9 @@ void PhySnirTrace (std::string context ,uint16_t cellId, uint16_t rnti, double r
        if(2*shard2[i] == ue && (i == 0 || i == 1 || i == 2))
        { 
           //std::cout<<context<<std::endl;
-          std::cout<<" UE"<<ue<<" belonging to D2D"<<i+1<<"\n";
+          std::cout<<" UE"<<ue<<" belonging to group "<<i+1<<"\n";
+          std::cout<<" RNTI : "<<rnti<<"\nRSRP : "<<rsrp<<"\nSINR : "<<sinr<<std::endl;
           std::cout<<" Time : " <<Simulator::Now().GetSeconds()<<"\n";
-          std::cout<<" RNTI : "<<rnti<<"                 rsrp : "<<rsrp<<"               SINR : "<<sinr<<std::endl;
           std::cout<<"\n";
        }
     }
